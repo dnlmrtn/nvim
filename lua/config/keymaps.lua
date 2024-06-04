@@ -35,6 +35,11 @@ keymap("v", ">", ">gv", opts)
 keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 keymap("v", "p", '"_dP', opts)
 
+
+keymap('n', 'y', '"+y', { noremap = true, silent = true })
+keymap('v', 'y', '"+y', { noremap = true, silent = true })
+keymap('x', 'y', '"+y', { noremap = true, silent = true })
+
 -- Visual Block Mode Key Mappings
 -- Move text up and down
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)

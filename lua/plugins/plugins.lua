@@ -37,7 +37,6 @@ packer.init({
   },
 })
 
--- Install your plugins here
 return packer.startup(function(use)
   -- Have packer manage itself
   use "wbthomason/packer.nvim"
@@ -64,15 +63,9 @@ return packer.startup(function(use)
     end
   }
 
-  -- File tree
+  -- Treesitter 
   use {
-    'kyazdani42/nvim-tree.lua',
-    requires = {
-      'kyazdani42/nvim-web-devicons', -- optional, for file icons
-    },
-    config = function()
-      require'nvim-tree'.setup {}
-    end
+    'nvim-treesitter/nvim-treesitter',
   }
 
   -- Telescope for fuzzy finding
@@ -80,6 +73,8 @@ return packer.startup(function(use)
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
+  -- Gitsigns for in line git diffs
+  use 'lewis6991/gitsigns.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   if packer_bootstrap then

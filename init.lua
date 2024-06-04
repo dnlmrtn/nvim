@@ -1,9 +1,8 @@
--- init.lua
-
 -- Load plugins
 require('plugins.plugins')
 require('plugins.nvim-tree')
 require('plugins.telescope')
+require('plugins.gitsigns')
 
 -- Load config files
 require('config.lsp')

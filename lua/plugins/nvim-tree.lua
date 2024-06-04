@@ -1,6 +1,7 @@
 require("nvim-tree").setup({
   git = {
-    enable = true
+    enable = true,
+    ignore = false,
   },
   sort = {
     sorter = "case_sensitive",
@@ -10,7 +11,6 @@ require("nvim-tree").setup({
   },
   renderer = {
     group_empty = true,
-    hightlight_git = true,
   },
   filters = {
     dotfiles = false,
