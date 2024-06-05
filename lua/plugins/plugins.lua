@@ -1,5 +1,3 @@
--- plugins.lua
-
 -- Automatically install packer if not already installed
 local ensure_packer = function()
   local fn = vim.fn
@@ -16,10 +14,10 @@ local packer_bootstrap = ensure_packer()
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
 vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
+augroup packer_user_config
+autocmd!
+autocmd BufWritePost plugins.lua source <afile> | PackerSync
+augroup end
 ]])
 
 -- Use a protected call so we don't error out on first use
@@ -51,7 +49,8 @@ return packer.startup(function(use)
       'kyazdani42/nvim-web-devicons', -- optional, for file icons
     },
   }
--- LSP configuration and Mason for managing LSP servers
+
+  -- LSP configuration and Mason for managing LSP servers
   use {
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
@@ -62,6 +61,11 @@ return packer.startup(function(use)
       require("lspconfig").tsserver.setup{}
     end
   }
+  use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
+  use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
+  use 'hrsh7th/cmp-buffer' -- Buffer source for nvim-cmp
+  use 'hrsh7th/cmp-path' -- Path source for nvim-cmp
+  use 'hrsh7th/cmp-cmdline' -- Cmdline source for nvim-cmp
 
   -- Treesitter 
   use {

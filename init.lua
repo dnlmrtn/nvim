@@ -10,5 +10,5 @@ require('config.keymaps')
 require('config.options')
 
 -- Apply Kanagawa color scheme
-vim.cmd("colorscheme kanagawa")
+vim.cmd("colorscheme kanagawa-dragon")
 
