@@ -8,25 +8,30 @@ local opts = { noremap = true, silent = true }
 -- Key mapping function
 local keymap = vim.api.nvim_set_keymap
 
--- Normal Mode Key Mappings
+-- Remap navigation keys in normal mode
+keymap('n', 'l', 'h', { noremap = true, silent = true })
+keymap('n', ';', 'l', { noremap = true, silent = true })
+
+-- Remap navigation keys in visual mode
+keymap('v', 'l', 'h', { noremap = true, silent = true })
+keymap('v', ';', 'l', { noremap = true, silent = true })
+
+--- Normal Mode Key Mappings ---
 -- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+keymap("n", "<C-l>", "<C-w>h", opts)
+keymap("n", "<C-;>", "<C-w>l", opts)
 
 -- Resize with arrows
-keymap("n", "<C-Up>", ":resize +2<CR>", opts)
-keymap("n", "<C-Down>", ":resize -2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+keymap("n", "<C-S-j>", ":resize +2<CR>", opts)
+keymap("n", "<C-S-k>", ":resize -2<CR>", opts)
+keymap("n", "<C-S-l>", ":vertical resize -2<CR>", opts)
+keymap("n", "<C-S-;>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
-
--- Visual Mode Key Mappings
+--- Visual Mode Key Mappings ---
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)

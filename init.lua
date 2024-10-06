@@ -1,8 +1,8 @@
 -- Load plugins
-require('plugins.plugins')
+require('plugins.gitsigns')
+require('plugins.nvim-cmp')
 require('plugins.nvim-tree')
 require('plugins.telescope')
-require('plugins.gitsigns')
 
 -- Load config files
 require('config.lsp')
