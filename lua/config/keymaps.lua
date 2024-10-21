@@ -8,14 +8,6 @@ local opts = { noremap = true, silent = true }
 -- Key mapping function
 local keymap = vim.api.nvim_set_keymap
 
--- Remap navigation keys in normal mode
-keymap('n', 'l', 'h', { noremap = true, silent = true })
-keymap('n', ';', 'l', { noremap = true, silent = true })
-
--- Remap navigation keys in visual mode
-keymap('v', 'l', 'h', { noremap = true, silent = true })
-keymap('v', ';', 'l', { noremap = true, silent = true })
-
 --- Normal Mode Key Mappings ---
 -- Better window navigation
 keymap("n", "<C-l>", "<C-w>h", opts)
@@ -39,7 +31,6 @@ keymap("v", ">", ">gv", opts)
 -- Move text up and down
 keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 keymap("v", "p", '"_dP', opts)
-
 
 keymap('n', 'y', '"+y', { noremap = true, silent = true })
 keymap('v', 'y', '"+y', { noremap = true, silent = true })
